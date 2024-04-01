@@ -102,7 +102,22 @@ export async function login(req,res){
     try {
         
         UserModel.findOne({ username })
-            
+            .then(user => {
+                bcrypt.compare(password, user.password)
+                    .then(passwordCheck => {
+
+                        if(!passwordCheck) return res.status(400).send({ error: "Don't have Password"});
+
+                        // create jwt token
+                        const token = jwt.sign({
+                                        userId: user._id,
+                                        username : user.username
+                                    }, ENV.JWT_SECRET , { expiresIn : "24h"});
+
+                                                        
+
+                    })
+            })
             .catch( error => {
                 return res.status(404).send({ error : "Username not Found"});
             })
