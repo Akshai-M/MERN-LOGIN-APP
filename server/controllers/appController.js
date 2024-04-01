@@ -93,3 +93,18 @@ export async function register(req,res){
     }
 
 }
+
+
+export async function login(req,res){
+   
+    const { username, password } = req.body;
+
+    try {
+        
+        
+
+    } catch (error) {
+        return res.status(500).send({ error});
+    }
+}
+
