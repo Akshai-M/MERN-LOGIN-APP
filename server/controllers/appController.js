@@ -101,10 +101,13 @@ export async function login(req,res){
 
     try {
         
-        
+        UserModel.findOne({ username })
+            
+            .catch( error => {
+                return res.status(404).send({ error : "Username not Found"});
+            })
 
     } catch (error) {
         return res.status(500).send({ error});
     }
 }
-
