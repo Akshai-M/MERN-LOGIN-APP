@@ -33,3 +33,8 @@ export async function getUser({ username }){
         return { error : "Password doesn't Match...!"}
     }
 }
+
+/** register user function */
+export async function registerUser(credentials){
+    
+}
