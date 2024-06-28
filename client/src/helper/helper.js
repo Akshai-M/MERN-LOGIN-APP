@@ -51,3 +51,8 @@ export async function registerUser(credentials){
         return Promise.reject({ error })
     }
 }
+
+/** login function */
+export async function verifyPassword({ username, password }){
+    
+}
