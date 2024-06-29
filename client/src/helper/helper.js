@@ -76,3 +76,8 @@ export async function updateUser(response){
         return Promise.reject({ error : "Couldn't Update Profile...!"})
     }
 }
+
+/** generate OTP */
+export async function generateOTP(username){
+    
+}
