@@ -33,3 +33,17 @@ let MailGenerator = new Mailgen({
   "subject" : "",
 }
 */
+export const registerMail = async (req, res) => {
+    const { username, userEmail, text, subject } = req.body;
+
+    // body of the email
+    
+
+    // send mail
+    transporter.sendMail(message)
+        .then(() => {
+            return res.status(200).send({ msg: "You should receive an email from us."})
+        })
+        .catch(error => res.status(500).send({ error }))
+
+}
