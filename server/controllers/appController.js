@@ -33,3 +33,17 @@ export async function verifyUser(req, res, next){
   "profile": ""
 }
 */
+export async function register(req,res){
+
+    try {
+        const { username, password, profile, email } = req.body;        
+
+        // check the existing user
+        const existUsername = new Promise((resolve, reject) => {
+            UserModel.findOne({ username }, function(err, user){
+                if(err) reject(new Error(err))
+                if(user) reject({ error : "Please use unique username"});
+
+                resolve();
+            })
+        });
