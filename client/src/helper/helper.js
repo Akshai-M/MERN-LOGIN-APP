@@ -9,5 +9,6 @@ axios.defaults.baseURL = process.env.REACT_APP_SERVER_DOMAIN;
 
 /** To get username from Token */
 export async function getUsername(){
+    const token = localStorage.getItem('token')
     
 }
