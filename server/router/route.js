@@ -12,3 +12,4 @@ import Auth, { localVariables } from '../middleware/auth.js';
 router.route('/register').post(controller.register); // register user
 router.route('/registerMail').post(registerMail); // send the email
 router.route('/authenticate').post(controller.verifyUser, (req, res) => res.end()); // authenticate user
+router.route('/login').post(controller.verifyUser,controller.login); // login in app
