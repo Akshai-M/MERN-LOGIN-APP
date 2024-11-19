@@ -16,3 +16,4 @@ router.route('/login').post(controller.verifyUser,controller.login); // login in
 
 /** GET Methods */
 router.route('/user/:username').get(controller.getUser) // user with username
+router.route('/generateOTP').get(controller.verifyUser, localVariables, controller.generateOTP) // generate random OTP
