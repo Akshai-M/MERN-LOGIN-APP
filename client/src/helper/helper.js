@@ -14,3 +14,8 @@ export async function getUsername(){
     let decode = jwt_decode(token)
     return decode;
 }
+
+/** authenticate function */
+export async function authenticate(username){
+    
+}
