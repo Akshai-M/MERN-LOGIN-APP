@@ -79,5 +79,9 @@ export async function updateUser(response){
 
 /** generate OTP */
 export async function generateOTP(username){
-    
+    try {
+        
+    } catch (error) {
+        return Promise.reject({ error });
+    }
 }
