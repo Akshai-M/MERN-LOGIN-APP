@@ -80,6 +80,9 @@ export async function updateUser(response){
 /** generate OTP */
 export async function generateOTP(username){
     try {
+        const {data : { code }, status } = await axios.get('/api/generateOTP', { params : { username }});
+
+        // send mail with the OTP
         
         return Promise.resolve(code);
     } catch (error) {
