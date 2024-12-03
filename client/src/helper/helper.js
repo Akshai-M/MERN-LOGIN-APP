@@ -81,6 +81,7 @@ export async function updateUser(response){
 export async function generateOTP(username){
     try {
         
+        return Promise.resolve(code);
     } catch (error) {
         return Promise.reject({ error });
     }
