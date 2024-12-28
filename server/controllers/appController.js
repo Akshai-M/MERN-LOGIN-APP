@@ -63,3 +63,5 @@ export async function register(req,res){
             .then(() => {
                 if(password){
                     bcrypt.hash(password, 10)
+                        .then( hashedPassword => {
+                            
