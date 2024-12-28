@@ -65,3 +65,9 @@ export async function register(req,res){
                     bcrypt.hash(password, 10)
                         .then( hashedPassword => {
                             
+                            const user = new UserModel({
+                                username,
+                                password: hashedPassword,
+                                profile: profile || '',
+                                email
+                            });
