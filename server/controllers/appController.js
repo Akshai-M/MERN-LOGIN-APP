@@ -57,3 +57,9 @@ export async function register(req,res){
                 resolve();
             })
         });
+
+
+        Promise.all([existUsername, existEmail])
+            .then(() => {
+                if(password){
+                    bcrypt.hash(password, 10)
